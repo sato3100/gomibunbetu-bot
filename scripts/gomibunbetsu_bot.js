@@ -129,7 +129,7 @@ module.exports = (robot) => {
 
                         const dbResult = await GarbageRules.findByPk(predictedItem);
                         if (dbResult) {
-                            res.send(`これは ${dbResult.category} です。\n\n【分別方法】\n${dbResult.rule}`);
+                            res.send(`これは ${dbResult.category} です。\n\nb【ごみの種類、収集日】\n${dbResult.rule}`);
                         } else {
                             res.send(`「${predictedItem}」と判断しましたが、そのゴミの分別ルールはまだデータベースに登録されていません。`);
                         }
