@@ -5,18 +5,14 @@ const { Sequelize, DataTypes } = require('sequelize');
 const fs = require('fs');
 
 // PATという認証方法がclarifaiにコードがあったため、使用してみます。
-// Your PAT (Personal Access Token) can be found in the Account's Security section
-const PAT = '17c0f812836746219f1457df5ecf80f8';
-// Specify the correct user_id/app_id pairings
-// Since you're making inferences outside your app's scope
-const USER_ID = 'spo8ww6fi7d1';
-const APP_ID = 'Sorting-garbage';
-// Change these to whatever model and image URL you want to use
-const MODEL_ID = 'garbage-datasets';
+// Renderの環境変数から情報を取得する
+const PAT = process.env.PAT;
+const USER_ID = process.env.USER_ID;
+const APP_ID = process.env.APP_ID;
+const MODEL_ID = process.env.MODEL_ID;
 
-// renderのpostgres接続
-const DB_INFO = "postgresql://gomibunbetsu_user:3RXVNYAx0HM4r2SHxkM7z2L0uJpxzueE@dpg-d1r4jg3ipnbc73f1prng-a.singapore-postgres.render.com/gomibunbetsu";
-
+// Render上で動くときは内部URLを、ローカルで動かすときは外部URLを使う
+const DB_INFO = process.env.DATABASE_URL || "postgresql://gomibunbetsu_user:3RXVNYAx0HM4r2SHxkM7z2L0uJpxzueE@dpg-d1r4jg3ipnbc73f1prng-a.singapore-postgres.render.com/gomibunbetsu";
 
 
 const pg_option = { ssl: { rejectUnauthorized: false } };
