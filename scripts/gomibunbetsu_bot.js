@@ -11,7 +11,7 @@ const USER_ID = process.env.USER_ID;
 const APP_ID = process.env.APP_ID;
 const MODEL_ID = process.env.MODEL_ID;
 
-// Render上で動くときは内部URLを、ローカルで動かすときは外部URLを使う
+// Render上で動くときは内部URLを使用
 const DB_INFO = process.env.DATABASE_URL;
 
 
