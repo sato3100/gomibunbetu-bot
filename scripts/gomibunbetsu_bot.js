@@ -12,7 +12,7 @@ const APP_ID = process.env.APP_ID;
 const MODEL_ID = process.env.MODEL_ID;
 
 // Render上で動くときは内部URLを、ローカルで動かすときは外部URLを使う
-const DB_INFO = process.env.DATABASE_URL || "postgresql://gomibunbetsu_user:3RXVNYAx0HM4r2SHxkM7z2L0uJpxzueE@dpg-d1r4jg3ipnbc73f1prng-a.singapore-postgres.render.com/gomibunbetsu";
+const DB_INFO = process.env.DATABASE_URL;
 
 
 const pg_option = { ssl: { rejectUnauthorized: false } };
